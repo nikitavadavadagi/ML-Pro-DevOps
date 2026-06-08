@@ -36,6 +36,8 @@ The project implements a CI/CD pipeline using:
 
 Automated CI/CD Pipeline using Jenkins, Docker and GitHub Webhooks
 
+Webhook automation test on Jenkins
+
 ## Author
 
 Nikita Vadavadagi
