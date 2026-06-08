@@ -32,6 +32,7 @@ The project implements a CI/CD pipeline using:
 * Machine Learning based prediction
 * Dockerized application
 * Automated build pipeline using Jenkins
+* CI/CD Pipeline using Jenkins and Docker
 
 ## Author
 
