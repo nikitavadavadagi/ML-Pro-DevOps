@@ -55,16 +55,17 @@ stage('Publish OWASP Report') {
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                bat 'docker build -t ml-pro-app .'
-            }
-        }
-        stage('Docker Run') {
+   stage('Docker Build') {
+    steps {
+        bat 'docker build -t ml-pro-app .'
+    }
+}
+
+stage('Deploy Container') {
     steps {
         bat 'docker stop ml-pro-app-container || exit /b 0'
         bat 'docker rm ml-pro-app-container || exit /b 0'
-        bat 'docker run -d --name ml-pro-app-container -p 5000:5000 ml-pro-app'
+        bat 'docker run -d --name ml-pro-app-container -p 5050:5050 ml-pro-app'
     }
 }
     }
