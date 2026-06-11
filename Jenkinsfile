@@ -14,12 +14,29 @@ pipeline {
                 bat 'pip install -r requirements.txt'
             }
         }
-
-        stage('OWASP Dependency Check') {
-            steps {
-                dependencyCheck additionalArguments: '--scan .', odcInstallation: 'DP'
-            }
-        }
+stage('OWASP Dependency Check') {
+    steps {
+        bat '''
+        C:\\Tools\\dependency-check\\bin\\dependency-check.bat ^
+        --project "ML-Pro" ^
+        --scan . ^
+        --format HTML ^
+        --out dependency-check-report
+        '''
+    }
+}
+stage('Publish OWASP Report') {
+    steps {
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'dependency-check-report',
+            reportFiles: 'dependency-check-report.html',
+            reportName: 'OWASP Dependency Check Report'
+        ])
+    }
+}
 
         stage('SonarQube Analysis') {
             steps {
