@@ -32,8 +32,16 @@ The project implements a CI/CD pipeline using:
 * Machine Learning based prediction
 * Dockerized application
 * Automated build pipeline using Jenkins
+<<<<<<< HEAD
 * CI/CD Pipeline using Jenkins and Docker
 * Webhook automation test on Jenkins
+=======
+
+
+Automated CI/CD Pipeline using Jenkins, Docker and GitHub Webhooks
+
+Webhook automation test on Jenkins
+>>>>>>> 9cdd3eb8a6e3e3721fc5451fc2b5ff4ebb65fcbe
 
 ## Author
 
