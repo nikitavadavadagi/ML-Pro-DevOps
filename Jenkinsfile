@@ -21,7 +21,8 @@ stage('OWASP Dependency Check') {
         --project "ML-Pro" ^
         --scan . ^
         --format HTML ^
-        --out dependency-check-report
+        --out dependency-check-report ^
+        --nvdApiKey d24f4b4f-d0dd-4a08-8214-9bd6352cd42e
         '''
     }
 }
